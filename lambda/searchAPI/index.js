@@ -6,7 +6,9 @@ module.exports.handler = (event, context, callback) => {
     { name: 'libro', id: 'A001' },
     { name: 'libretra', id: 'A002' },
     { name: 'camara', id: 'A003' },
-    { name: 'teclado', id: 'A004' }
+    { name: 'teclado', id: 'A004' },
+    { name: 'wifi', id: 'A005' },
+    { name: 'word', id: 'A006' }
   ];
 
   const searchParameter = event.queryStringParameters.s;
