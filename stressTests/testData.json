@@ -1,0 +1,19 @@
+{
+    "stressTests": [      
+      {
+        "name": "GET Index",
+        "relativeUrl": "/index",
+        "options": {
+          "method": "GET",
+          "concurrency": 2,
+          "maxRequests": 200,
+          "requestsPerSecond": 4
+        },
+        "thresholds": {
+          "errors": [0, 10],
+          "meanLatency": [0, 300]
+        }
+      }
+    ]
+  }
+  

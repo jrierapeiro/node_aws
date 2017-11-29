@@ -1,0 +1,14 @@
+{
+  "name": "search-api-lambda",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+
+  },
+  "dependencies": {
+  
+  },
+  "devDependencies": {
+   
+  }
+}
