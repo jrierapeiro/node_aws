@@ -7,7 +7,7 @@ const testDefinitions = configuration.stressTests;
 const q = require('q');
 
 describe('Stress tests', function () {
-  const address = "http://default-environment.pmpnqmqig7.eu-west-1.elasticbeanstalk.com";
+  const address = "https://pgs6ofx83l.execute-api.eu-west-1.amazonaws.com/prod/searchItem";
 
   it('First test', (done) => {
     let endpointConfig = testDefinitions[0];

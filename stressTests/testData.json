@@ -1,8 +1,8 @@
 {
     "stressTests": [      
       {
-        "name": "GET Index",
-        "relativeUrl": "/index",
+        "name": "GET Search string li",
+        "relativeUrl": "/?s=li",
         "options": {
           "method": "GET",
           "concurrency": 2,
