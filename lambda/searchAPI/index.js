@@ -8,7 +8,8 @@ module.exports.handler = (event, context, callback) => {
     { name: 'camara', id: 'A003' },
     { name: 'teclado', id: 'A004' },
     { name: 'wifi', id: 'A005' },
-    { name: 'word', id: 'A006' }
+    { name: 'word', id: 'A006' },
+    { name: 'lamnda', id: 'A007' }
   ];
 
   const searchParameter = event.queryStringParameters ? event.queryStringParameters.s : null;
