@@ -11,8 +11,8 @@ module.exports.handler = (event, context, callback) => {
     { name: 'word', id: 'A006' }
   ];
 
-  const searchParameter = event.queryStringParameters.s;
-  let resultItems = event.queryStringParameters.s ? items.filter((i) => { return i.name.startsWith(searchParameter); }) : items;
+  const searchParameter = event.queryStringParameters ? event.queryStringParameters.s : null;
+  let resultItems = searchParameter ? items.filter((i) => { return i.name.startsWith(searchParameter); }) : items;
   
   var response = {
     statusCode: 200,

@@ -40,15 +40,18 @@ node {
     }
     
     def bucketName="jariepei-elasticbeanstalk-zips"
+    def appName="NodeApp"
+    def envName="testing"
+
     stage('Push zip to S3 bucket'){
         sh "aws s3 cp src/${appFileName} s3://${bucketName}/"
     }
     
     stage('EB create app version'){
-        sh "aws elasticbeanstalk --region eu-west-1 create-application-version --application-name \"NodeApp\" --version-label \"${env.BUILD_NUMBER}\" --source-bundle S3Bucket=\"${bucketName}\",S3Key=\"${appFileName}\""
+        sh "aws elasticbeanstalk --region eu-west-1 create-application-version --application-name \"${appName}\" --version-label \"${env.BUILD_NUMBER}\" --source-bundle S3Bucket=\"${bucketName}\",S3Key=\"${appFileName}\""
     }    
 
     stage('Update environment'){
-      sh "aws elasticbeanstalk --region eu-west-1 update-environment --application-name \"NodeApp\" --environment-name \"nodeapp-testing\" --version-label \"${env.BUILD_NUMBER}\""
+      sh "aws elasticbeanstalk --region eu-west-1 update-environment --application-name \"${appName}\" --environment-name \"${envName}\" --version-label \"${env.BUILD_NUMBER}\""
     }
 }
